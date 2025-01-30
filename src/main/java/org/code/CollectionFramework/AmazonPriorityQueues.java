@@ -1,9 +1,8 @@
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 
 
-public class AmazonPriorityQueue {
+public class AmazonPriorityQueues {
 
     int getKLargest(int[] nums, int k){
 
@@ -34,7 +33,4 @@ public class AmazonPriorityQueue {
                 .toString();
     }
 
-}
-
-public static void main(String[] args) {
 }

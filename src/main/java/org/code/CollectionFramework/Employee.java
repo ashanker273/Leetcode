@@ -31,7 +31,7 @@ class Employees {
     // toString method for easy printing
     @Override
     public String toString() {
-        return STR."Employee{name='\{name}\{'\''}, age=\{age}, id=\{id}\{'}'}";
+        return null;
     }
 }
 
