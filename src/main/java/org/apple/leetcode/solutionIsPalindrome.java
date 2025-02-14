@@ -2,20 +2,21 @@ package org.apple.leetcode;
 
 public class solutionIsPalindrome {
     public boolean isPalindrome(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (Character.isLetterOrDigit(c))
-                sb.append(Character.toLowerCase(c));
-        }
+        if (s == null) return true;
 
-        String str = sb.toString();
-        int start = 0;
-        int end = str.length() - 1;
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end))
-                return false;
-            start++;
-            end--;
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+            if (!Character.isLetterOrDigit(s.charAt(left))) left++;
+            else if (!Character.isLetterOrDigit(s.charAt(right))) right--;
+            else {
+                if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
         }
 
         return true;
