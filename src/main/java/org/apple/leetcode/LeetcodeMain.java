@@ -6,8 +6,10 @@ public class LeetcodeMain {
         System.out.println(solutionTwoSum.twoSum(new int[]{2, 7, 11, 15}, 9));
 
         solutionIsPalindrome solutionisPalindromes = new solutionIsPalindrome();
-
         System.out.println(solutionisPalindromes.isPalindrome("A man, a plan, a canal: Panama"));
+
+        solutionIsValid solutionIsValid = new solutionIsValid();
+        System.out.println(solutionIsValid.isValid("()[]{}"));
 
     }
 }
