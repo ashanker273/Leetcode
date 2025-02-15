@@ -11,5 +11,11 @@ public class LeetcodeMain {
         solutionIsValid solutionIsValid = new solutionIsValid();
         System.out.println(solutionIsValid.isValid("()[]{}"));
 
+        solutionMyHashMap.MyHashMap obj = new solutionMyHashMap.MyHashMap();
+        obj.put(15,109);
+        System.out.println(obj.get(15));
+        obj.remove(1);
+        System.out.println(obj.get(1));
+
     }
 }
