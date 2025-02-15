@@ -1,7 +1,7 @@
 package org.apple.leetcode;
 
 import java.util.Arrays;
-
+//Very bad slow solution
 public class solutionMyHashMap {
     static class MyHashMap {
 
