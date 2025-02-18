@@ -12,10 +12,13 @@ public class LeetcodeMain {
         System.out.println(solutionIsValid.isValid("()[]{}"));
 
         solutionMyHashMap.MyHashMap obj = new solutionMyHashMap.MyHashMap();
-        obj.put(15,109);
+        obj.put(15, 109);
         System.out.println(obj.get(15));
         obj.remove(1);
         System.out.println(obj.get(1));
+
+        solutionMergeSortedArray mergeArray = new solutionMergeSortedArray();
+        mergeArray.merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
 
     }
 }
