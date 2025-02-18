@@ -17,7 +17,7 @@ public class solutionGroupAnagrams {
 
         return new ArrayList<>(map.values());
     }
-
+    //better way
     private String sortString(String str) {
         char[] arr = str.toCharArray();
         Arrays.sort(arr);
