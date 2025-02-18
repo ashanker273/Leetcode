@@ -20,5 +20,8 @@ public class LeetcodeMain {
         solutionMergeSortedArray mergeArray = new solutionMergeSortedArray();
         mergeArray.merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
 
+        solutionGroupAnagrams solutionGroupAnagrams = new solutionGroupAnagrams();
+        solutionGroupAnagrams.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
+
     }
 }
