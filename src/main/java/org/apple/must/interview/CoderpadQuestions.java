@@ -3,6 +3,8 @@ package org.apple.must.interview;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Coderpad 30 questions
@@ -81,12 +83,12 @@ public class CoderpadQuestions {
          */
 
         //Checked exception
-        FileReader fr = new FileReader("text.txt");
+//        FileReader fr = new FileReader("text.txt");
 
 
         //unchecked exception
         int a = 5;
-        int b = 0;
+        int b = 1; //needs to be zero
 
         if (b == 0) {
             throw new IllegalArgumentException("Cannot divide by zero");
@@ -140,6 +142,127 @@ public class CoderpadQuestions {
                 System.out.println("B method");
             }
         }
+
+        /**
+         *
+         * 9. Question: What is the difference between public, protected, and private access modifiers in Java? Write an example code snippet that uses all three access modifiers.
+         *
+         * Answer: public means that the method or variable is accessible from any other class, protected means that the method or variable is accessible from within the same package and from subclasses, and private means that the method or variable is only accessible from within the same class. Here’s an example code snippet that uses all three access modifiers:
+         */
+
+        /**
+         * 10. Question: What is polymorphism in Java? Write an example code snippet that demonstrates polymorphism.
+         *
+         * Answer: Polymorphism in Java refers to the ability of objects of different classes to be used interchangeably, as long as they share a common interface or superclass. Here’s an example code snippet that demonstrates polymorphism:
+         */
+
+        interface Animal {
+            void makeSound();
+        }
+
+        class Dog implements Animal {
+            @Override
+            public void makeSound() {
+                System.out.println("Dog Bark");
+            }
+        }
+
+        class Cat implements Animal {
+            @Override
+            public void makeSound() {
+                System.out.println("Cat Meow");
+            }
+        }
+
+        Animal[] animals = new Animal[2];
+        animals[0] = new Dog();
+        animals[1] = new Cat();
+
+        for (Animal animal : animals) {
+            animal.makeSound();
+        }
+
+    }
+
+    /**
+     * 11. Fix the following code to properly implement a binary search algorithm:
+     */
+
+    int binarySearch(int[] arr, int key) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] == key) {
+                return mid;
+            } else if (arr[mid] > key) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 12. Question: What is the difference between an interface and an abstract class in Java?
+     *
+     * Answer:
+     * Both interfaces and abstract classes are used to define common behavior and functionality, but they differ in several ways. An interface is a collection of abstract methods and constants that can be implemented by any class that implements the interface. An abstract class is a class that cannot be instantiated and can contain both abstract and non-abstract methods.
+     *
+     * One key difference is that a class can implement multiple interfaces, but can only extend one abstract class. Another difference is that an abstract class can have instance variables and non-abstract methods, while an interface cannot.
+     */
+
+    /**
+     * 13. Question: Fix the following code to correctly sort an array of strings in alphabetical order:
+     */
+
+    void sortString(String str) {
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+        System.out.println(new String(chars));
+    }
+
+    /**
+     * 14. Question: What is the difference between a HashMap and a TreeMap in Java?
+     *
+     * Answer:
+     * Both HashMap and TreeMap are implementations of the Map interface in Java, but they differ in several ways. HashMap is an unordered collection of key-value pairs, while TreeMap is a sorted collection of key-value pairs based on the natural ordering of the keys or a specified Comparator.
+     *
+     * HashMap allows null keys and values, and has constant-time average case performance for key-value operations. TreeMap does not allow null keys and has logarithmic-time performance for key-value operations. HashMap is generally faster for most operations, but TreeMap can be useful when the keys need to be sorted or when iterating over the keys in a specific order.
+     */
+
+    /**
+     * 15. Question: What is the difference between a stack and a queue in Java?
+     * Answer:
+     * Both stacks and queues are data structures used to store and retrieve elements, but they differ in several ways. A stack is a Last-In-First-Out (LIFO) data structure, where elements are added and removed from the same end. A queue is a First-In-First-Out (FIFO) data structure, where elements are added to the back and removed from the front.
+     * In Java, you can implement a stack using the Stack class or the Deque interface with the push() and pop() methods. You can implement a queue using the LinkedList class or the Queue interface with the offer() and poll() methods.
+     */
+
+    void collectionMethod() {
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        map.put(1, 0);
+        map.put(0, 0);
+
+        map.keySet().forEach(System.out::print);
+
+        //Linkedlist implementation is not bounded
+        Queue queue = new LinkedList();
+        queue.offer(1);
+        queue.poll();
+
+        //Bounded Queue
+        ArrayBlockingQueue<Integer> arrayBlockingQueue = new ArrayBlockingQueue<>(2);
+        arrayBlockingQueue.offer(1);
+        arrayBlockingQueue.poll();
+
+        //Stack
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.pop();
+
+
 
 
     }
