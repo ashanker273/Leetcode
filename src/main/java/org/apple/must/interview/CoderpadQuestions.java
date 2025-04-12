@@ -262,10 +262,40 @@ public class CoderpadQuestions {
         stack.push(1);
         stack.pop();
 
-
-
-
     }
+
+    /**
+     * 16. Question: Fix the following code to correctly calculate the factorial of a number:
+     */
+
+    //5 = 5 * 4 * 3 * 2 * 1 = 120
+
+    int factorial(int num){
+        if(num == 0) return 1;
+        int result = 1;
+        for(int i = 1; i <= num; i++){
+            result = result * i;
+        }
+        return result;
+    }
+
+    /**
+     * 17. Question: Fix the following code to correctly check if a string is a palindrome:
+     */
+
+    boolean isPalindrome(String str) {
+        if(str.isEmpty()) return true;
+        if(str.length() == 1) return true;
+
+        for(int i = 0; i < str. length() / 2; i++){
+            if((str.charAt(i) != str.charAt(str.length() - i - 1))){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 
 
 }
