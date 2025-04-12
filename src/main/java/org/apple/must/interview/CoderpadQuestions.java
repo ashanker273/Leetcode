@@ -124,6 +124,7 @@ public class CoderpadQuestions {
          * 8. Question: What is the purpose of the super keyword in Java? Write an example code snippet that uses the super keyword.
          *
          * Answer: The super keyword is used to call a method or constructor in the superclass. Here’s an example code snippet:
+         * In this example, the Dog class extends the Animal class and overrides its makeSound() method. The super.makeSound() call in the Dog class calls the makeSound() method of the superclass, and the System.out.println("Bark") statement adds the specific sound of the Dog class.
          */
 
         class A {
@@ -139,6 +140,8 @@ public class CoderpadQuestions {
                 System.out.println("B method");
             }
         }
+
+
     }
 
 
