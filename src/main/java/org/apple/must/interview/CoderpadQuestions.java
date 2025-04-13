@@ -42,6 +42,11 @@ public class CoderpadQuestions {
 
         interface Vehicle {
             void drive();
+            int x = 0;
+
+            default void turnLeft(){
+                System.out.println("turnLeft");
+            }
         }
 
         abstract class Engine {
@@ -63,6 +68,7 @@ public class CoderpadQuestions {
         BMW x3 = new BMW();
         x3.drive();
         x3.fuel();
+        x3.turnLeft();
 
         /**
          * 4. Question: Explain the difference between the == operator and the equals() method in Java. Write an example code snippet that demonstrates the use of both.
@@ -182,6 +188,44 @@ public class CoderpadQuestions {
             animal.makeSound();
         }
 
+        class MyClass2 {
+            private List<String> myList;
+
+            MyClass2(){
+                myList = new ArrayList<>();
+                myList.add("Dog");
+            }
+
+            public MyClass2(List<String> list) {
+                myList = list;
+            }
+
+            public void removeElement(String element) {
+                for (String str : myList) {
+
+                    if (str.equals(element)) {
+                        try {
+                            myList.remove(str);
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        finally {
+                            System.out.println("Not Removed " + str);
+                        }
+                    }
+                }
+            }
+        }
+
+        MyClass2 class3 = new MyClass2();
+        class3.removeElement("Dog");
+
+
+
+
+
+
     }
 
     /**
@@ -262,6 +306,9 @@ public class CoderpadQuestions {
         stack.push(1);
         stack.pop();
 
+        HashSet<Integer> hashSet = new HashSet<>();
+        hashSet.add(1);
+
     }
 
     /**
@@ -270,10 +317,10 @@ public class CoderpadQuestions {
 
     //5 = 5 * 4 * 3 * 2 * 1 = 120
 
-    int factorial(int num){
-        if(num == 0) return 1;
+    int factorial(int num) {
+        if (num == 0) return 1;
         int result = 1;
-        for(int i = 1; i <= num; i++){
+        for (int i = 1; i <= num; i++) {
             result = result * i;
         }
         return result;
@@ -284,18 +331,50 @@ public class CoderpadQuestions {
      */
 
     boolean isPalindrome(String str) {
-        if(str.isEmpty()) return true;
-        if(str.length() == 1) return true;
+        if (str.isEmpty()) return true;
+        if (str.length() == 1) return true;
 
-        for(int i = 0; i < str. length() / 2; i++){
-            if((str.charAt(i) != str.charAt(str.length() - i - 1))){
+        for (int i = 0; i < str.length() / 2; i++) {
+            if ((str.charAt(i) != str.charAt(str.length() - i - 1))) {
                 return false;
             }
         }
         return true;
     }
 
+    /**
+     * 18. Question: What is the difference between a HashSet and a TreeSet in Java?
+     *
+     * Answer:
+     * Both HashSet and TreeSet are implementations of the Set interface in Java, but they differ in several ways. HashSet uses a hash table to store its elements, which provides constant-time performance for basic operations such as add, remove, and contains. However, HashSet does not guarantee the order of its elements.
+     *
+     * TreeSet uses a red-black tree to store its elements, which provides log-time performance for basic operations. TreeSet guarantees that its elements are sorted in natural order or in the order specified by a Comparator, which allows for efficient searching and iteration. However, TreeSet may have higher overhead than HashSet due to the use of a tree structure.
+     *
+     * To summarize, use HashSet when you need fast add, remove, and contains operations and don’t care about the order of elements. Use TreeSet when you need elements sorted in a specific order and don’t mind sacrificing some performance for this feature.
+     */
 
+    /**
+     * Question: There is a bug in the following code that is causing a NullPointerException. Can you identify and fix it?
+     * The bug in the code is that myList is never initialized, so when addAll is called on it, a NullPointerException is thrown. To fix this, myList needs to be initialized in the constructor before calling addAll. Here’s the corrected code:
+     */
+
+    public class MyClass {
+        private List<String> myList;
+
+        MyClass() {
+            myList = new ArrayList<>();
+        }
+
+
+        public MyClass(List<String> list) {
+            myList = new ArrayList<>();
+            myList.addAll(list);
+        }
+
+        public int getSize() {
+            return myList.size();
+        }
+    }
 
 
 }
